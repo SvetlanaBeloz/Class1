@@ -10,7 +10,7 @@ int main()
 	cat.SetEnergy(100);
 	cat.SetIsHungry(0);
 	cat.SetName("Barsik");
-	cat.SetWeight(5);
+	cat.SetWeight(5.5);
 	cat.Print();
 	cat.Feed();
 	cat.WakeUp();
