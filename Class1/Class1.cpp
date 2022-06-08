@@ -4,6 +4,7 @@ int main()
 {
 	Cat cat;
 	
+	// Main flow
 	cat.SetAge(5);
 	cat.SetColor("white");
 	cat.SetEnergy(60);
