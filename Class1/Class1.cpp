@@ -4,13 +4,12 @@ int main()
 {
 	Cat cat;
 	
-	// Main flow
 	cat.SetAge(5);
 	cat.SetColor("white");
-	cat.SetEnergy(100);
+	cat.SetEnergy(50);
 	cat.SetIsHungry(0);
 	cat.SetName("Barsik");
-	cat.SetWeight(5.5);
+	cat.SetWeight(3.5);
 	cat.Print();
 	cat.Feed();
 	cat.WakeUp();
