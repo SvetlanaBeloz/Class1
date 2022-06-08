@@ -7,10 +7,10 @@ int main()
 	// Main flow
 	cat.SetAge(5);
 	cat.SetColor("white");
-	cat.SetEnergy(60);
+	cat.SetEnergy(100);
 	cat.SetIsHungry(0);
 	cat.SetName("Barsik");
-	cat.SetWeight(3.5);
+	cat.SetWeight(5);
 	cat.Print();
 	cat.Feed();
 	cat.WakeUp();
