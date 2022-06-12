@@ -27,13 +27,9 @@ void Cat::SetEnergy(int e)
 
 void Cat::SetIsHungry(bool i)
 {
-	if (i == 0)
-		i = is_hungry;
-	else {
-		cout << "Incorrect value for parameter is_hungry!\n";
-		is_hungry = 0;
-	}
+	is_hungry = i;
 }
+
 
 void Cat::SetName(string n)
 {
@@ -48,6 +44,36 @@ void Cat::SetWeight(double w)
 		cout << "Incorrect value for parameter weight!\n";
 		weight = 5;
 	}
+}
+
+string Cat::GetName() const
+{
+	return name;
+}
+
+string Cat::GetColor() const
+{
+	return color;
+}
+
+double Cat::GetWeight() const
+{
+	return weight;
+}
+
+int Cat::GetAge() const
+{
+	return age;
+}
+
+int Cat::GetEnergy() const
+{
+	return energy;
+}
+
+bool Cat::GetIsHungry() const
+{
+	return is_hungry;
 }
 
 void Cat::Speak()
