@@ -12,6 +12,10 @@ void Cat::SetAge(int a)
 
 void Cat::SetColor(string c)
 {
+	if (any_of(c.begin(), c.end(), ::isdigit)) {
+		cout << "Incorrect value for parameter color!\n";
+		return;
+	}
 	color = c;
 }
 
@@ -33,6 +37,10 @@ void Cat::SetIsHungry(bool i)
 
 void Cat::SetName(string n)
 {
+	if (any_of(n.begin(), n.end(), ::isdigit)) {
+		cout << "Incorrect value for parameter name!\n";
+		return;
+	}
 	name = n;
 }
 
@@ -74,6 +82,28 @@ int Cat::GetEnergy() const
 bool Cat::GetIsHungry() const
 {
 	return is_hungry;
+}
+
+Cat::Cat() : Cat("Barsik") {}
+
+Cat::Cat(string n) : Cat(n, 4) {}
+
+Cat::Cat(string n, int a) : Cat(n, a, "white") {}
+
+Cat::Cat(string n, int a, string c) : Cat(n, a, c, 3.5) {}
+
+Cat::Cat(string n, int a, string c, double w) : Cat(n, a, c, w, 80) {}
+
+Cat::Cat(string n, int a, string c, double w, int e) : Cat(n, a, c, w, e, true) {}
+
+Cat::Cat(string n, int a, string c, double w, int e, bool i)
+{
+	SetName(n);
+	SetAge(a);
+	SetColor(c);
+	SetEnergy(e);
+	SetIsHungry(i);
+	SetWeight(w);
 }
 
 void Cat::Speak()
@@ -155,8 +185,6 @@ void  Cat::Sleep()
 	cout << name << " is sleeping" << "\n";
 }
 
-
-
 void  Cat::FillCat()
 {
 	cout << "Enter name of cat" << "\n";
@@ -171,5 +199,14 @@ void  Cat::FillCat()
 	cin >> energy;
 	cout << "Enter is cat hungry or not" << "\n";
 	cin >> is_hungry;
+}
 
+void Cat::Show()
+{
+	cout << GetAge() << "\n";
+	cout << GetColor() << "\n";
+	cout << GetEnergy() << "\n";
+	cout << GetIsHungry() << "\n";
+	cout << GetName() << "\n";
+	cout << GetWeight() << "\n";
 }
